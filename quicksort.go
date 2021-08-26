@@ -1,8 +1,5 @@
 package golangsorter
 
-type QuickSort struct {
-}
-
 func Partition(arr []int, min int, max int) int {
 	pivot := arr[max]
 	i := min - 1
@@ -16,11 +13,11 @@ func Partition(arr []int, min int, max int) int {
 	return i + 1
 }
 
-func (q QuickSort) QuickSort(arr []int, min int, max int) {
+func QuickSort(arr []int, min int, max int) {
 	if min < max {
 		pi := Partition(arr, min, max)
 
-		q.QuickSort(arr, min, pi-1)
-		q.QuickSort(arr, pi+1, max)
+		QuickSort(arr, min, pi-1)
+		QuickSort(arr, pi+1, max)
 	}
 }
