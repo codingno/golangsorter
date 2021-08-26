@@ -1,6 +1,6 @@
 package golangsorter
 
-func Partition(arr []int, min int, max int) int {
+func partition(arr []int, min int, max int) int {
 	pivot := arr[max]
 	i := min - 1
 	for j := min; j <= max-1; j++ {
@@ -13,11 +13,15 @@ func Partition(arr []int, min int, max int) int {
 	return i + 1
 }
 
-func QuickSort(arr []int, min int, max int) {
+func quickSort(arr []int, min int, max int) {
 	if min < max {
-		pi := Partition(arr, min, max)
+		pi := partition(arr, min, max)
 
-		QuickSort(arr, min, pi-1)
-		QuickSort(arr, pi+1, max)
+		quickSort(arr, min, pi-1)
+		quickSort(arr, pi+1, max)
 	}
+}
+
+func QuickSort(arr []int) {
+	quickSort(arr, 0, len(arr)-1)
 }
