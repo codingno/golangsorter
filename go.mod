@@ -1,3 +1,3 @@
-module github.com/codingno/golang-sorter
+module github.com/codingno/golangsorter
 
 go 1.16
